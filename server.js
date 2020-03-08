@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+var bodyParser=require("body-parser")
 const ShortUrl = require('./models/shortUrl')
 
 const shortId = require('shortid')
@@ -12,19 +12,25 @@ const mongoose = require('mongoose')
 var mongoURL=require("./config/config").mongoUrl
 
 mongoose.connect(mongoURL, {
-  useNewUrlParser: true, useUnifiedTopology: true
+   useUnifiedTopology: true,
+   useNewUrlParser: true 
 },(err)=>{
   if (err) {
     console.log('err', err)
-  } else {
+  } else {  
     console.log('connected to MongoDB server')
   }
 })
 
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }))
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
 app.use((req,res,next)=>{
   res.header("Access-Control-Allow-Origin","*")
   res.header("Access-Control-Allow-headers","Origin,X-Requested-with,Content-Type,Accept")
