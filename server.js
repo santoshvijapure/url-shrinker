@@ -25,7 +25,11 @@ mongoose.connect(mongoURL, {
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
-
+app.use((req,res,next)=>{
+  res.header("Access-Control-Allow-Origin","*")
+  res.header("Access-Control-Allow-headers","Origin,X-Requested-with,Content-Type,Accept")
+  next()
+})
 
 //root route
 app.get('/', async (req, res) => {
