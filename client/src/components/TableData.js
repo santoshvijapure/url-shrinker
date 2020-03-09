@@ -14,7 +14,7 @@ class TableData extends Component {
   }
   
     async componentDidMount() {
-        await axios.get('http://localhost:8000/all')
+        await axios.get('https://shrinkapi.herokuapp.com/all')
         .then(response => {
         console.log(response.data)
         this.setState({

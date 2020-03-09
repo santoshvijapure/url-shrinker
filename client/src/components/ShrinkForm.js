@@ -26,12 +26,12 @@ export default class ShrinkForm extends Component {
         } else{
             console.log('URL is: ', this.state.url);
             // Post values
-            axios.post('http://localhost:8000/shrink', {
+            axios.post('https://shrinkapi.herokuapp.com/shrink', {
                 "fullUrl": this.state.url
             })
                 .then(res => {
                     this.setState({
-                        link: `http://localhost:8000/${res.data.short}`,
+                        link: `https://shrinkapi.herokuapp.com/${res.data.short}`,
                         resultStatus: true
                     })
                     console.log(res.data)
