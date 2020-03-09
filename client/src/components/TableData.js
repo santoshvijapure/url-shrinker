@@ -16,12 +16,10 @@ class TableData extends Component {
     async componentDidMount() {
         await axios.get('https://shrinkapi.herokuapp.com/all')
         .then(response => {
-        console.log(response.data)
         this.setState({
           data:response.data,
           loaded:true
         })
-        console.log(this.state.data)
         })
         .catch(error => console.log(error)) 
       }
@@ -46,10 +44,10 @@ class TableData extends Component {
                 {
                 this.state.data.map((data) => {
                 return ( <tr>
-                  <td><a href="{ data.full }" target="_blank"> { data.full } </a></td>
-                  <td><a href="{ data.short }" target="_blank"> { data.short } </a></td>
+                  <td>{ data.full } </td>
+                  <td>{ "https://shrinkapi.herokuapp.com/"+data.short }</td>
                   <td> { data.clicks }</td>
-                  <td> { data.date }</td>
+                  <td> { data.getDate  }</td>
                  </tr>)
                 })
                 }                

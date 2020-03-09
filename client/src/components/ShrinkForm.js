@@ -45,8 +45,10 @@ export default class ShrinkForm extends Component {
 
     render() {
         return (
-            <div className="page1" >
-            <div className=" jumbotron">
+            <div className="page1 container-fluid" >
+            <h1 className="text text-center"> Url-Shirnker</h1>  
+                <h2>a simple and poweerful URL management tool.</h2>
+                <br/>
             <fieldset>
                 <form onSubmit={this.handleSubmit}>
                <div className="row">
@@ -66,13 +68,13 @@ export default class ShrinkForm extends Component {
               <fieldset>
 
               <CopyToClipboard text={this.state.link}
-          onCopy={() => console.log("copied to Clipboard!!! ")}>
+          onCopy={() => alert("copied to Clipboard!!! ")}>
                 <span id="result" style={{visibility: this.state.resultStatus ? 'visible' : 'hidden' }} > 
                 {this.state.link  } <img src="../url_logo.png" alt="copy url" className=" copy-img"></img>
                 </span>
                 </CopyToClipboard>
               </fieldset>
-            </div>
+          
             </div>
         )
     }
