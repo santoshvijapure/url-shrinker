@@ -10,6 +10,7 @@
     "bootstrap": "^3.3.7",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "validator": "^12.2.0"
@@ -35,5 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:8000"
+  "proxy": "http://localhost:8000"
 }

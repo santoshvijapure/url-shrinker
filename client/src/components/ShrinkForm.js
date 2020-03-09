@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import validator from 'validator';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 export default class ShrinkForm extends Component {
 
     state = {
         url: '',
-        link: ''
+        link: '',
+        resultStatus:false
     };
 
     handleChange = (e) => {        
@@ -29,7 +31,8 @@ export default class ShrinkForm extends Component {
             })
                 .then(res => {
                     this.setState({
-                        link: `http://localhost:8000/${res.data.short}`
+                        link: `http://localhost:8000/${res.data.short}`,
+                        resultStatus: true
                     })
                     console.log(res.data)
                 })
@@ -39,22 +42,35 @@ export default class ShrinkForm extends Component {
         }
     }
 
+
     render() {
         return (
-            <div className="container">
-            <div className="jumbotron">
+            <div className="page1" >
+            <div className=" jumbotron">
             <fieldset>
                 <form onSubmit={this.handleSubmit}>
-                    <input className="form-control mr-2" name="text" type="url"
-                           placeholder="enter the URL"
+               <div className="row">
+                    <div className="col-10">
+                    <input className="form-control text-field mr-2" name="text" type="url"
+                           placeholder="Enter / Paste the loooooong Link including the http or https"
                                onChange={this.handleChange}
                            />
-
-                    <input className="form-control" type="submit" value="shrink"/>
+                    </div>
+                    <div className="col-2">
+                    <input className="btn btn-primary" type="submit" value="shrink"/>
+                    </div>
+               </div>     
                </form>
             </fieldset>
+            <br/>
               <fieldset>
-                <span id="result">{this.state.link }</span>
+
+              <CopyToClipboard text={this.state.link}
+          onCopy={() => console.log("copied to Clipboard!!! ")}>
+                <span id="result" style={{visibility: this.state.resultStatus ? 'visible' : 'hidden' }} > 
+                {this.state.link  } <img src="../url_logo.png" alt="copy url" className=" copy-img"></img>
+                </span>
+                </CopyToClipboard>
               </fieldset>
             </div>
             </div>

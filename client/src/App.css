@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+fieldset {
+  text-align: center;
+}
+fieldset #result{
+  background:#5a82cc;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 2em;
+  border-radius: 9px;
+  color:white;
+  opacity: .7;
+  cursor: copy;
+}
+
+fieldset #result :hover{
+  text-shadow: #326ee7;
+}
+.copy-img{
+  height: 40px;
+  width: 40px;
+}
+.copy-img :hover{
+  transform: rotate(360deg);
+  transform: scale(3);
+}
+
+
+.page1{
+  height: 80vh;
+}

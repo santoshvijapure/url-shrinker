@@ -4,7 +4,7 @@ var bodyParser=require("body-parser")
 const ShortUrl = require('./models/shortUrl')
 
 const shortId = require('shortid')
-shortId.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-")
+shortId.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-")
 
 //mongoose setup
 
@@ -46,8 +46,11 @@ app.get('/', async (req, res) => {
 var shrink=require("./routes/shrink")
 app.use(shrink)
 
+
 var utility=require("./routes/utility")
 app.use(utility)
+
+
 
 
 //reduirection the shortlink to full link
