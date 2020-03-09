@@ -47,7 +47,7 @@ class TableData extends Component {
                   <td>{ data.full } </td>
                   <td>{ "https://shrinkapi.herokuapp.com/"+data.short }</td>
                   <td> { data.clicks }</td>
-                  <td> { data.getDate  }</td>
+                  <td> { data.date.slice(0,10)  }</td>
                  </tr>)
                 })
                 }                

@@ -46,8 +46,8 @@ export default class ShrinkForm extends Component {
     render() {
         return (
             <div className="page1 container-fluid" >
-            <h1 className="text text-center"> Url-Shirnker</h1>  
-                <h2>a simple and poweerful URL management tool.</h2>
+            <h1 className="text text-center"> URL SHRINKER</h1>  
+                <h2>A simple and poweerful URL management tool.</h2>
                 <br/>
             <fieldset>
                 <form onSubmit={this.handleSubmit}>

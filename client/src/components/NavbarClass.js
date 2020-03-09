@@ -39,7 +39,7 @@ export default class NavbarClass extends Component {
                 </Navbar.Collapse>
             </Navbar>
 
-            <div class="container">
+            <div className="container">
             { this.state.renderForm? <ShrinkForm/>:<TableData/>}  
             
 

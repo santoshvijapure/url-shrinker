@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 var bodyParser=require("body-parser")
 const ShortUrl = require('./models/shortUrl')
+var path = require("path");
 
 const shortId = require('shortid')
 shortId.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-")
@@ -40,7 +41,9 @@ app.use((req,res,next)=>{
 //root route
 app.get('/', async (req, res) => {
   const shortUrls = await ShortUrl.find()
-  res.render('index', { shortUrls: shortUrls })
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+
+  // res.render('index', { shortUrls: shortUrls })
 })
 
 var shrink=require("./routes/shrink")
@@ -62,7 +65,9 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)  
 })
 
-
+app.get("*",(req,res)=>{
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+})
 PORT=process.env.PORT || 8000
 app.listen(PORT,()=>{
   console.log("server started at port : " + PORT )
