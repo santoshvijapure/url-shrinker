@@ -52,7 +52,7 @@ npm start
     └── index.ejs
 
 ```
-## file Structure of cliend
+## file Structure of client
 ```
 ├── package.json
 ├── package-lock.json
