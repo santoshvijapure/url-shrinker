@@ -7,7 +7,7 @@
 
 ## Getting started
 
-Install JSON Server 
+Install Server dependencies  
 
 ```
 npm install
