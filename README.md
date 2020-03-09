@@ -5,6 +5,14 @@
 
 ![](SS.png)
 
+## Development Stack
+
+    ### MERN 
+        -MongoDB
+        -ExpressJS
+        -ReactJS
+        -NodeJS
+
 ## Getting started
 
 Install Server dependencies  
