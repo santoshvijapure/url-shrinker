@@ -42,7 +42,12 @@ app.use((req,res,next)=>{
 app.get('/', async (req, res) => {
   const shortUrls = await ShortUrl.find()
   // res.sendFile(path.join(__dirname, './client/build/index.html'));
-  res.render('index', { shortUrls: shortUrls })
+  // res.render('index', { shortUrls: shortUrls })
+    res.json({
+      statusCode:200,
+      messege:"API working Properly"
+
+    })
 })
 
 var shrink=require("./routes/shrink")
