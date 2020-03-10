@@ -1,7 +1,0 @@
-{
-  "name": "Start on Heroku: Node.js",
-  "description": "Url Shortener service",
-  "repository": "https://github.com/santoshvijapure/url-shirnker",
-  "keywords": ["node", "express", "heroku","react"],
-  "image": "heroku/nodejs"
-}
