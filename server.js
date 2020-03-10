@@ -41,9 +41,8 @@ app.use((req,res,next)=>{
 //root route
 app.get('/', async (req, res) => {
   const shortUrls = await ShortUrl.find()
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-
-  // res.render('index', { shortUrls: shortUrls })
+  // res.sendFile(path.join(__dirname, './client/build/index.html'));
+  res.render('index', { shortUrls: shortUrls })
 })
 
 var shrink=require("./routes/shrink")
@@ -65,10 +64,8 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)  
 })
 
-app.get("*",(req,res)=>{
-  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
-})
-PORT=process.env.PORT || 8000
+
+PORT=process.env.PORT || 4001
 app.listen(PORT,()=>{
   console.log("server started at port : " + PORT )
 });
