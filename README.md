@@ -1,13 +1,21 @@
 
-# url-shrinker
+# url-shrinker [react-app](https://shrinker-client.herokuapp.com/) || [API](https://shrinkapi.herokuapp.com)
 
 ### simple and powerful link management tool
 
 ![](SS.png)
 
+## Development Stack
+
+    ### MERN 
+        -MongoDB
+        -ExpressJS
+        -ReactJS
+        -NodeJS
+
 ## Getting started
 
-Install JSON Server 
+Install Server dependencies  
 
 ```
 npm install
@@ -52,7 +60,7 @@ npm start
     └── index.ejs
 
 ```
-## file Structure of cliend
+## file Structure of client
 ```
 ├── package.json
 ├── package-lock.json
@@ -85,5 +93,14 @@ npm start
     └── url_logo.png
 
 ```
-##
+## API endpoints
+```
+Method |Path         | description                                   
+GET    |/            |- root route
+GET    |/all         |-to get the all URL in data
+GET    |/one/:id     |-get the data ofone URL
+GET    |/:id         |- redirect ot the long URL from short hash
+POST   |/srhink      |-create a short URL from loong url
+DELETE | /remove/:id |-remove the URL data with hash
+```
 
